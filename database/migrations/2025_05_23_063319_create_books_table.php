@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('author');
             $table->date('publication_date');
             $table->string('isbn');
-            $table->enum('status', ['tersedia','dipinjam']);
+            $table->enum('status', ['tersedia','dipinjam'])->default('tersedia');
             $table->timestamps();
         });
     }

@@ -35,9 +35,18 @@ class CategoryController extends Controller
             'name' => 'required|string|unique:categories|max:255',
         ]);
 
-        DB::transaction(function () use ($validated) {
+        DB::beginTransaction();
+
+        try {
             $category = Category::create($validated);
-        });
+
+
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->withErrors('Gagal menyimpan data: ' . $e->getMessage());
+        }
+
 
         return redirect()->route('categories.index');
     }
@@ -67,9 +76,18 @@ class CategoryController extends Controller
             'name' => 'required|string|unique:categories|max:255',
         ]);
 
-        DB::transaction(function () use ($validated, $category) {
+        DB::beginTransaction();
+
+        try {
             $category->update($validated);
-        });
+
+
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->withErrors('Gagal menyimpan data: ' . $e->getMessage());
+        }
+
 
         return redirect()->route('categories.index');
     }
@@ -79,9 +97,15 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        DB::transaction(function () use ($category) {
+        DB::beginTransaction();
+
+        try {
             $category->delete();
-        });
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->withErrors('Gagal menghapus data: ' . $e->getMessage());
+        }
 
         return redirect()->route('categories.index');
     }

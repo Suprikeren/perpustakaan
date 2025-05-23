@@ -1,6 +1,6 @@
 @extends('layouts.admins.master')
 
-@section('title', 'Create Categories')
+@section('title', 'Update Categories')
 
 
 @section('content')
@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card-title">
-                            <h2> Add New Categoies</h2>
+                            <h2> Edit Categoies</h2>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                     <div class="form-group">
                         <label for="name">Nama Category</label>
                         <input type="text" class="form-control" value="{{ $category->name }}" id="name" name="name"
-                            placeholder="enter medications type">
+                            placeholder="enter type">
                     </div>
                     <button type="submit" class="btn btn-success">Add</button>
                     <a href="{{ route('categories.index') }}" class="btn btn-warning">back</a>

@@ -55,12 +55,12 @@
                          </p>
                      </a>
                  </li>
-                 <li class="nav-header">MATER DATA MEDICATIONS</li>
+                 <li class="nav-header">MATER DATA BOOKS</li>
                  <li class="nav-item">
-                     <a href="#"
-                         class="nav-link class {{ Request::is('medications*') ? 'active' : '' }}">
+                     <a href="{{ route('books.index') }}"
+                         class="nav-link class {{ Request::is('books*') ? 'active' : '' }}">
                          <p>
-                             Medications
+                             Buku
                          </p>
                      </a>
                  </li>
