@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('loan_date');
             $table->date('return_date');
             $table->enum('status', ['dipinjam', 'dikembalikan']);
-            $table->integer('late_charge');
+            $table->integer('late_charge')->nullable();
             $table->timestamps();
         });
     }

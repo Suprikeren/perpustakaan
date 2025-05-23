@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-         User::factory()->create([
+        User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@example.com',
             'role' => 'admin',
@@ -21,5 +21,18 @@ class UserSeeder extends Seeder
             'address' => 'jalan lintas sumbawa utan',
             'registrasi_date' => now(),
         ]);
+
+        $anggota = ['anggota', 'naruto', 'sakura', 'sasuke','ino','sai','supri'];
+
+        foreach ($anggota as $user) {
+            User::factory()->create([
+                'name' => $user,
+                'email' => "$user@example.com",
+                'role' => 'anggota',
+                'password' => bcrypt('1234567890'),
+                'address' => 'jalan lintas sumbawa utan',
+                'registrasi_date' => now(),
+            ]);
+        }
     }
 }

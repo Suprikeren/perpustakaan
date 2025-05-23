@@ -64,12 +64,12 @@
                          </p>
                      </a>
                  </li>
-                 <li class="nav-header">MATER DATA EMPLOYES</li>
+                 <li class="nav-header">MATER DATA PINJAMAN BUKU</li>
                  <li class="nav-item">
-                     <a href="#"
+                     <a href="{{ route('loan-books.index') }}"
                          class="nav-link class {{ Request::is('employes*') ? 'active' : '' }}">
                          <p>
-                             Employes
+                              buku yg dipinjam
                          </p>
                      </a>
                  </li>

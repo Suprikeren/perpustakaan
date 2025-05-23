@@ -38,7 +38,8 @@ class BookController extends Controller
             'title' => 'required|string|max:255',
             'author' => 'required|string|max:255',
             'publication_date' => 'required|date',
-            'status' => 'required|string|max:255',
+            // 'status' => 'required|string|max:255',
+            'status' => 'required|in:tersedia,dipinjam',
             'categories' => 'required|array',
             'categories.*' => 'exists:categories,id',
 
@@ -98,7 +99,8 @@ class BookController extends Controller
             'title' => 'required|string|max:255',
             'author' => 'required|string|max:255',
             'publication_date' => 'required|date',
-            'status' => 'required|string|max:255',
+            // 'status' => 'required|string|max:255',
+            'status' => 'required|in:tersedia,dipinjam',
             'categories' => 'required|array',
             'categories.*' => 'exists:categories,id',
 

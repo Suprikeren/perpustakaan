@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LoanBookController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,6 +21,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('categories', CategoryController::class);
     Route::resource('books', BookController::class);
+    Route::resource('loan-books', LoanBookController::class);
 });
 
 require __DIR__.'/auth.php';
