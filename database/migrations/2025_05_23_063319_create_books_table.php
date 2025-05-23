@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('avatar');
             $table->string('title');
             $table->string('author');
-            $table->date('publication-date');
+            $table->date('publication_date');
             $table->string('isbn');
             $table->enum('status', ['tersedia','dipinjam']);
             $table->timestamps();
